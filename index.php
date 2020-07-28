@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html >
 <head>
-  <!-- Site made with Mobirise Website Builder v4.9.3, https://mobirise.com -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Mobirise v4.9.3, mobirise.com">
@@ -39,22 +38,17 @@
         <div class="menu-logo">
             <div class="navbar-brand">
                 <span class="navbar-logo">
-                    <a href="https://mobirise.co">
+                    <a href="index.php">
                          <img src="assets/images/logo-150x150.png" alt="Mobirise" title="" style="height: 4.8rem;">
                     </a>
                 </span>
                 
             </div>
         </div>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            
-            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-secondary display-4" href="https://mobirise.co"><span class="mobi-mbri mobi-mbri-error mbr-iconfont mbr-iconfont-btn"></span>
-                    SignOut</a></div>
-        </div>
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobirise.info/t">amp templates</a></section><section class="cid-s5T3BIfHTa mbr-fullscreen mbr-parallax-background" id="header2-2">
+<section class="cid-s5T3BIfHTa mbr-fullscreen mbr-parallax-background" id="header2-2">
 
     
 
@@ -67,8 +61,8 @@
                     WELCOME TO <br>MSHIKO MANAGER</h1>
                 
                 <p class="mbr-text pb-3 mbr-fonts-style display-5">Welcome to the simplest money management platform.<br>Easy to use and very efficient.<br>All your transactions uder one roof.</p>
-                <div class="mbr-section-btn"><a class="btn btn-md btn-secondary display-4" href="https://mobirise.co">SIGNUP</a>
-                    <a class="btn btn-md btn-white-outline display-4" href="https://mobirise.co">LOGIN</a></div>
+                <div class="mbr-section-btn"><a class="btn btn-md btn-secondary display-4" href="signup.php">SIGNUP</a>
+                    <a class="btn btn-md btn-white-outline display-4" href="login.php">LOGIN</a></div>
             </div>
         </div>
     </div>
@@ -85,7 +79,7 @@
         <div class="media-container-row align-center mbr-white">
             <div class="col-12">
                 <p class="mbr-text mb-0 mbr-fonts-style display-7"><em>
-                    © Copyright 2019 MshikoManager - All Rights Reserved
+                    © Copyright <?php echo date("Y"); ?> MshikoManager - All Rights Reserved
                 </em></p>
             </div>
         </div>

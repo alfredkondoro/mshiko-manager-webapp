@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html >
 <head>
-  <!-- Site made with Mobirise Website Builder v4.9.3, https://mobirise.com -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Mobirise v4.9.3, mobirise.com">
@@ -39,13 +38,8 @@
         <div class="menu-logo">
             <div class="navbar-brand">
                 <span class="navbar-logo">
-                    <a href="https://mobirise.co">
+                    <a href="dashboard.php">
                          <img src="assets/images/logo-150x150.png" alt="Mobirise" title="" style="height: 3.8rem;">
-                    </a>
-                </span>
-                <span class="navbar-caption-wrap">
-                    <a class="navbar-caption text-white display-4" href="https://mobirise.co">
-                        MOBIRISE
                     </a>
                 </span>
             </div>
@@ -58,7 +52,7 @@
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobirise.info/d">free web maker</a></section><section class="header6 cid-s5VIJsycr6 mbr-fullscreen" data-bg-video="https://www.youtube.com/watch?v=AK1o9rZHABg" id="header6-j">
+<section class="header6 cid-s5VIJsycr6 mbr-fullscreen" data-bg-video="https://www.youtube.com/watch?v=AK1o9rZHABg" id="header6-j">
 
     
 
@@ -71,8 +65,8 @@
                 <h1 class="mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style display-1">
                     BALANCE: TSH. 1,878,000</h1>
                 <p class="mbr-text align-center pb-3 mbr-fonts-style display-5">MONEY MANAGEMENT REQUIRES COMMITMENT AND SACRIFICE</p>
-                <div class="mbr-section-btn align-center"><a class="btn btn-md btn-secondary display-4" href="https://mobirise.co">EXPENSES</a>
-                        <a class="btn btn-md btn-warning display-4" href="https://mobirise.co">REVENUE</a></div>
+                <div class="mbr-section-btn align-center"><a class="btn btn-md btn-secondary display-4" href="expenses.php">EXPENSES</a>
+                        <a class="btn btn-md btn-warning display-4" href="revenue.php">REVENUE</a></div>
             </div>
         </div>
     </div>

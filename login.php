@@ -1,3 +1,46 @@
+<?php
+   include("connect.php");
+   session_start();
+   
+   if($_SERVER["REQUEST_METHOD"] == "POST") {
+      // username and password sent from form 
+    
+      $myusername = $_POST['uname'];
+      $mypassword = $_POST['password'];
+
+      if(empty(trim($_POST["uname"]))){
+        $username_err = "Please enter username";
+    } else{
+        $username = trim($_POST["uname"]);
+    }
+    
+    // Check if password is empty
+    if(empty(trim($_POST["password"]))){
+        $password_err = "Please enter your password.";
+    } else{
+        $password = trim($_POST["password"]);
+    }
+      // Prepare a select statement
+      $sql = "SELECT id FROM users WHERE uname = '$myusername' and pass = '$mypassword'";
+
+      $result = mysqli_query($db,$sql)or die(mysqli_error($db));
+      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+      $active = $row['active'];
+      
+      $count = mysqli_num_rows($result);
+      
+      // If result matched $myusername and $mypassword, table row must be 1 row
+		
+      if($count == 1) {
+         $_SESSION['login_user'] = $myusername;
+         $_SESSION['login_id'] = $row['id'];
+         
+         header("location: shop.php");
+      }else {
+         $error = "Your Login Name or Password is invalid";
+      }
+   }
+?>
 <!DOCTYPE html>
 <html >
 <head>
@@ -43,22 +86,13 @@
                          <img src="assets/images/logo-150x150.png" alt="Mobirise" title="" style="height: 3.8rem;">
                     </a>
                 </span>
-                <span class="navbar-caption-wrap">
-                    <a class="navbar-caption text-white display-4" href="https://mobirise.co">
-                        MOBIRISE
-                    </a>
-                </span>
             </div>
         </div>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            
-            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-secondary display-4" href="https://mobirise.co"><span class="mobi-mbri mobi-mbri-error mbr-iconfont mbr-iconfont-btn"></span>
-                    SignOut</a></div>
-        </div>
+
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobirise.info/i">website creation software</a></section><section class="mbr-section content5 cid-s5VRgyCWkH mbr-parallax-background" id="content5-q">
+<section class="mbr-section content5 cid-s5VRgyCWkH mbr-parallax-background" id="content5-q">
 
     
 
@@ -69,7 +103,7 @@
         <div class="media-container-row">
             <div class="title col-12 col-md-8">
                 <h2 class="align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-1">LOGIN</h2>
-                <h3 class="mbr-section-subtitle align-center mbr-light mbr-white pb-3 mbr-fonts-style display-5"><strong>A SINGLE USERNAME AND PASSWORD GETS YOU IN!</strong><br><strong>SIGNED IN ALREADY?</strong><br><strong><a href="signup.html">SIGN UP HERE</a></strong></h3>
+                <h3 class="mbr-section-subtitle align-center mbr-light mbr-white pb-3 mbr-fonts-style display-5"><strong>A SINGLE USERNAME AND PASSWORD GETS YOU IN!</strong><br><strong>SIGNED IN ALREADY?</strong><br><strong><a href="signup.php">SIGN UP HERE</a></strong></h3>
                 
                 
             </div>
@@ -93,11 +127,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="media-container-column col-lg-8" data-form-type="formoid">
-                    <div data-form-alert="" hidden="">
-                        Thanks for filling out the form!
-                    </div>
-            
-                    <form class="mbr-form" action="https://mobirise.com/" method="post" data-form-title="Mobirise Form"><input type="hidden" name="email" data-form-email="true" value="qECwx/xC91Ba/L/RAtgEQAxTfkLStceNhl6py03lpNq9aCitbS+X1SIi4BoyIwHrkcKMLQIQf2rD+S/wZk4dyrisnnG4CaF9KnjWoqWG7j4YbL4PS2ZnrLrYudIWdbrt">
+                    <form class="mbr-form" action="" method="post" data-form-title="Mobirise Form">
                         <div class="row row-sm-offset">
                             <div class="col-md-4 multi-horizontal" data-for="name">
                                 <div class="form-group">
@@ -105,24 +135,15 @@
                                     <input type="text" class="form-control" name="name" data-form-field="Name" required="" id="name-form1-6">
                                 </div>
                             </div>
+                        </div>
+                        <div class="row row-sm-offset">
                             <div class="col-md-4 multi-horizontal" data-for="email">
                                 <div class="form-group">
-                                    <label class="form-control-label mbr-fonts-style display-7" for="email-form1-6">Email</label>
-                                    <input type="email" class="form-control" name="email" data-form-field="Email" required="" id="email-form1-6">
+                                    <label class="form-control-label mbr-fonts-style display-7" for="email-form1-6">Password</label>
+                                    <input type="password" class="form-control" name="email" data-form-field="Email" required="" id="email-form1-6">
                                 </div>
                             </div>
-                            <div class="col-md-4 multi-horizontal" data-for="phone">
-                                <div class="form-group">
-                                    <label class="form-control-label mbr-fonts-style display-7" for="phone-form1-6">Phone</label>
-                                    <input type="tel" class="form-control" name="phone" data-form-field="Phone" id="phone-form1-6">
-                                </div>
                             </div>
-                        </div>
-                        <div class="form-group" data-for="message">
-                            <label class="form-control-label mbr-fonts-style display-7" for="message-form1-6">Message</label>
-                            <textarea type="text" class="form-control" name="message" rows="7" data-form-field="Message" id="message-form1-6"></textarea>
-                        </div>
-            
                         <span class="input-group-btn"><button href="" type="submit" class="btn btn-form btn-secondary display-4">LOGIN</button></span>
                     </form>
             </div>
@@ -140,7 +161,7 @@
         <div class="media-container-row align-center mbr-white">
             <div class="col-12">
                 <p class="mbr-text mb-0 mbr-fonts-style display-7"><em>
-                    © Copyright 2019 MshikoManager - All Rights Reserved
+                    © Copyright <?php echo date("Y"); ?> MshikoManager - All Rights Reserved
                 </em></p>
             </div>
         </div>
