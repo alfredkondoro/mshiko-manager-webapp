@@ -17,7 +17,7 @@
             header("location: revenue.php");
         }
         else{
-            echo 
+        //     echo 
         //     echo '<div class="alert alert-danger alert-dismissible">
         //     <button type="button" class="close" data-dismiss="alert">&times;</button>
         //     <strong>Failure!</strong> Could not add your expenses.

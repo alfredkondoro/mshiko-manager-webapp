@@ -95,7 +95,7 @@
         <h4 class="modal-title">ADD MORE EXPENSES</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
-      <form action="create-expenses.php">
+      <form action="create-expenses.php" method="post">
       <!-- Modal body -->
       <div class="modal-body">
         <div class="form-group">
