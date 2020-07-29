@@ -27,14 +27,14 @@
     
 
     <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <div class="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-        </button>
+        </button> -->
         <div class="menu-logo">
             <div class="navbar-brand">
                 <span class="navbar-logo">
@@ -60,7 +60,7 @@
                 <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-1">
                     WELCOME TO <br>MSHIKO MANAGER</h1>
                 
-                <p class="mbr-text pb-3 mbr-fonts-style display-5">Welcome to the simplest money management platform.<br>Easy to use and very efficient.<br>All your transactions uder one roof.</p>
+                <p class="mbr-text pb-3 mbr-fonts-style display-5">Welcome to the simplest money management platform.<br>Easy to use and very efficient.<br>All your transactions under one roof.</p>
                 <div class="mbr-section-btn"><a class="btn btn-md btn-secondary display-4" href="signup.php">SIGNUP</a>
                     <a class="btn btn-md btn-white-outline display-4" href="login.php">LOGIN</a></div>
             </div>

@@ -1,3 +1,12 @@
+<?php
+   session_start();
+   require_once'connect.php';
+   if(!isset($_SESSION['login_user'])){
+    header("location: index.php");
+   }
+   else{
+
+?>
 <!DOCTYPE html>
 <html >
 <head>
@@ -46,7 +55,7 @@
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             
-            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-secondary display-4" href="https://mobirise.co"><span class="mobi-mbri mobi-mbri-error mbr-iconfont mbr-iconfont-btn"></span>
+            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-secondary display-4" href="logout.php"><span class="mobi-mbri mobi-mbri-error mbr-iconfont mbr-iconfont-btn"></span>
                     SignOut</a></div>
         </div>
     </nav>
@@ -84,7 +93,7 @@
         <div class="media-container-row align-center mbr-white">
             <div class="col-12">
                 <p class="mbr-text mb-0 mbr-fonts-style display-7"><em>
-                    © Copyright 2019 MshikoManager - All Rights Reserved
+                    © Copyright <?php echo date("Y"); ?> MshikoManager - All Rights Reserved
                 </em></p>
             </div>
         </div>
@@ -106,3 +115,6 @@
   
 </body>
 </html>
+<?php
+   }
+?>

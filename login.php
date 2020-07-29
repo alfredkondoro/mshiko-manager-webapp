@@ -4,24 +4,24 @@
    
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
-    
-      $myusername = $_POST['uname'];
-      $mypassword = $_POST['password'];
+   
+      $myusername = $_POST['jina'];
+      $mypassword = $_POST['pwd'];
 
-      if(empty(trim($_POST["uname"]))){
+      if(empty(trim($_POST["jina"]))){
         $username_err = "Please enter username";
     } else{
-        $username = trim($_POST["uname"]);
+        $username = trim($_POST["jina"]);
     }
     
     // Check if password is empty
-    if(empty(trim($_POST["password"]))){
+    if(empty(trim($_POST["pwd"]))){
         $password_err = "Please enter your password.";
     } else{
-        $password = trim($_POST["password"]);
+        $password = trim($_POST["pwd"]);
     }
       // Prepare a select statement
-      $sql = "SELECT id FROM users WHERE uname = '$myusername' and pass = '$mypassword'";
+      $sql = "SELECT users_id FROM users WHERE users_name = '$myusername' and users_password = '$mypassword'";
 
       $result = mysqli_query($db,$sql)or die(mysqli_error($db));
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
@@ -33,9 +33,9 @@
 		
       if($count == 1) {
          $_SESSION['login_user'] = $myusername;
-         $_SESSION['login_id'] = $row['id'];
+         $_SESSION['login_id'] = $row['users_id'];
          
-         header("location: shop.php");
+         header("location: dashboard.php");
       }else {
          $error = "Your Login Name or Password is invalid";
       }
@@ -44,7 +44,7 @@
 <!DOCTYPE html>
 <html >
 <head>
-  <!-- Site made with Mobirise Website Builder v4.9.3, https://mobirise.com -->
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Mobirise v4.9.3, mobirise.com">
@@ -71,19 +71,19 @@
     
 
     <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <div class="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-        </button>
+        </button> -->
         <div class="menu-logo">
             <div class="navbar-brand">
                 <span class="navbar-logo">
-                    <a href="https://mobirise.co">
-                         <img src="assets/images/logo-150x150.png" alt="Mobirise" title="" style="height: 3.8rem;">
+                    <a href="index.php">
+                         <img src="assets/images/logo-150x150.png" alt="Mshiko Manager" title="" style="height: 3.8rem;">
                     </a>
                 </span>
             </div>
@@ -126,25 +126,25 @@
     </div>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="media-container-column col-lg-8" data-form-type="formoid">
-                    <form class="mbr-form" action="" method="post" data-form-title="Mobirise Form">
+            <div class="media-container-column col-lg-8">
+                    <form class="mbr-form" action="" method="post" >
                         <div class="row row-sm-offset">
-                            <div class="col-md-4 multi-horizontal" data-for="name">
+                            <div class="col-md-4 multi-horizontal">
                                 <div class="form-group">
-                                    <label class="form-control-label mbr-fonts-style display-7" for="name-form1-6">Name</label>
-                                    <input type="text" class="form-control" name="name" data-form-field="Name" required="" id="name-form1-6">
+                                    <label class="form-control-label mbr-fonts-style display-7" >Name</label>
+                                    <input type="text" class="form-control" name="jina" required="">
                                 </div>
                             </div>
                         </div>
                         <div class="row row-sm-offset">
-                            <div class="col-md-4 multi-horizontal" data-for="email">
+                            <div class="col-md-4 multi-horizontal">
                                 <div class="form-group">
-                                    <label class="form-control-label mbr-fonts-style display-7" for="email-form1-6">Password</label>
-                                    <input type="password" class="form-control" name="email" data-form-field="Email" required="" id="email-form1-6">
+                                    <label class="form-control-label mbr-fonts-style display-7">Password</label>
+                                    <input type="password" class="form-control" name="pwd"  required="">
                                 </div>
                             </div>
                             </div>
-                        <span class="input-group-btn"><button href="" type="submit" class="btn btn-form btn-secondary display-4">LOGIN</button></span>
+                        <span class="input-group-btn"><button type="submit" class="btn btn-form btn-secondary display-4">LOGIN</button></span>
                     </form>
             </div>
         </div>

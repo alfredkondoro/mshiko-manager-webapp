@@ -1,7 +1,17 @@
+<?php
+   session_start();
+   require_once'connect.php';
+   if(!isset($_SESSION['login_user'])){
+    header("location: index.php");
+   }
+   else{
+    $num = $_SESSION['login_id'];
+
+?>
 <!DOCTYPE html>
 <html >
 <head>
-  <!-- Site made with Mobirise Website Builder v4.9.3, https://mobirise.com -->
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Mobirise v4.9.3, mobirise.com">
@@ -29,37 +39,33 @@
     
 
     <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <div class="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-        </button>
+        </button> -->
         <div class="menu-logo">
             <div class="navbar-brand">
                 <span class="navbar-logo">
-                    <a href="https://mobirise.co">
-                         <img src="assets/images/logo-150x150.png" alt="Mobirise" title="" style="height: 3.8rem;">
+                    <a href="dashboard.php">
+                         <img src="assets/images/logo-150x150.png" alt="Mshiko Manager" title="" style="height: 3.8rem;">
                     </a>
                 </span>
-                <span class="navbar-caption-wrap">
-                    <a class="navbar-caption text-white display-4" href="https://mobirise.co">
-                        MOBIRISE
-                    </a>
-                </span>
+
             </div>
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             
-            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-secondary display-4" href="https://mobirise.co"><span class="mobi-mbri mobi-mbri-error mbr-iconfont mbr-iconfont-btn"></span>
+            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-secondary display-4" href="logout.php"><span class="mobi-mbri mobi-mbri-error mbr-iconfont mbr-iconfont-btn"></span>
                     SignOut</a></div>
         </div>
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobirise.info/z">best free css templates</a></section><section class="mbr-section content5 cid-s5VJooyPu3" data-bg-video="https://www.youtube.com/watch?v=NqDv1Vb_rwM" id="content5-l">
+<section class="mbr-section content5 cid-s5VJooyPu3" data-bg-video="https://www.youtube.com/watch?v=NqDv1Vb_rwM" id="content5-l">
 
     
 
@@ -70,16 +76,46 @@
         <div class="media-container-row">
             <div class="title col-12 col-md-8">
                 <h2 class="align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-1">
-                    EXPENSES</h2>
+                EXPENSES </h2>
                 <h3 class="mbr-section-subtitle align-center mbr-light mbr-white pb-3 mbr-fonts-style display-5">
                     COST INCURRED IN OR REQUIRED FOR SOMETHING</h3>
                 
-                <div class="mbr-section-btn align-center"><a class="btn btn-secondary display-4" href="https://mobirise.co"><span class="mobi-mbri mobi-mbri-plus mbr-iconfont mbr-iconfont-btn"></span>ADD MORE EXPENSES</a></div>
+                <div class="mbr-section-btn align-center"><a class="btn btn-secondary display-4" data-toggle="modal" data-target="#myModal"><span class="mobi-mbri mobi-mbri-plus mbr-iconfont mbr-iconfont-btn"></span>ADD MORE EXPENSES</a></div>
             </div>
         </div>
     </div>
 </section>
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
 
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">ADD MORE EXPENSES</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <form action="create-expenses.php">
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-control-label mbr-fonts-style display-7">Description</label>
+          <input type="text" class="form-control" name="neno"  required="">
+        </div>
+        <div class="form-group">
+          <label class="form-control-label mbr-fonts-style display-7">Amount</label><br>
+          <span>Tsh. </span><input type="number" class="form-control" name="kiasi"  required="">
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+      <button type="submit" class="btn btn-secondary btn-sm">Add Expenses</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
 <section class="section-table cid-s5VJhTwGmx" id="table1-k">
 
   
@@ -104,43 +140,37 @@
           <table class="table isSearch" cellspacing="0">
             <thead>
               <tr class="table-heads ">
-                  
-                  
-                  
-                  
+                <th class="head-item mbr-fonts-style display-7">
+                  #
+                </th>  
               <th class="head-item mbr-fonts-style display-7">
-                      NAME</th><th class="head-item mbr-fonts-style display-7">
-                      AGE</th><th class="head-item mbr-fonts-style display-7">
-                      DATE</th><th class="head-item mbr-fonts-style display-7">
-                      SALARY</th></tr>
+                  Description
+              </th>
+              <th class="head-item mbr-fonts-style display-7">
+                  Amount
+              </th>
+              </tr>
             </thead>
-
-            <tbody>
-              
-              
-              
-              
-            <tr> 
-                
-                
-                
-                
-              <td class="body-item mbr-fonts-style display-7">Jeanna Schmal</td><td class="body-item mbr-fonts-style display-7">44</td><td class="body-item mbr-fonts-style display-7">2016-10-17</td><td class="body-item mbr-fonts-style display-7">$317.000</td></tr><tr>
-                
-                
-                
-                
-              <td class="body-item mbr-fonts-style display-7">Caren Rials</td><td class="body-item mbr-fonts-style display-7">35</td><td class="body-item mbr-fonts-style display-7">2013-04-12</td><td class="body-item mbr-fonts-style display-7">$445.500</td></tr><tr>
-                
-                
-                
-                
-              <td class="body-item mbr-fonts-style display-7">Leon Rogol</td><td class="body-item mbr-fonts-style display-7">66</td><td class="body-item mbr-fonts-style display-7">2016-05-22</td><td class="body-item mbr-fonts-style display-7">$152.558</td></tr><tr>
-                
-                
-                
-                
-              <td class="body-item mbr-fonts-style display-7">Shala Barrera</td><td class="body-item mbr-fonts-style display-7">70</td><td class="body-item mbr-fonts-style display-7">2016-05-15</td><td class="body-item mbr-fonts-style display-7">$459.146</td></tr></tbody>
+            <tbody>            
+  
+              <?php
+              $matumizi = "SELECT * FROM expenses where users_id= '$num'";
+              $tokeo = mysqli_query($db, $matumizi);
+              if(mysqli_num_rows($tokeo) > 0){
+                $n =1;
+                while($row = mysqli_fetch_array($tokeo))
+                {
+              ?>
+              <tr>
+                  <td><?=$n++?></td>
+                  <td><?php echo $row["expenses_description"]; ?></td>
+                  <td><?php echo $row["expenses_amount"]; ?></td>
+              </tr>
+              <?php
+                                        }
+                                    }
+                                    ?>
+            </tbody>
           </table>
         </div>
         <div class="container table-info-container">
@@ -172,7 +202,7 @@
         <div class="media-container-row align-center mbr-white">
             <div class="col-12">
                 <p class="mbr-text mb-0 mbr-fonts-style display-7"><em>
-                    © Copyright 2019 MshikoManager - All Rights Reserved
+                    © Copyright <?php echo date("Y"); ?> MshikoManager - All Rights Reserved
                 </em></p>
             </div>
         </div>
@@ -196,3 +226,6 @@
   
 </body>
 </html>
+<?php
+   }
+?>
