@@ -7,14 +7,14 @@
    else{
     $num = $_SESSION['login_id'];
 
-        $description = $_GET['neno'];
-        $amount = $_GET['kiasi']; 
+        $description = $_POST['rev_neno'];
+        $amount = $_POST['rev_kiasi']; 
 
-        $sql = "INSERT INTO `revenue`( `revenue_description`, `revenue_amount`, `users_id`) VALUES ($description,$amount,$num)";
+        $sql = "INSERT INTO `revenue`( `revenue_description`, `revenue_amount`, `users_id`) VALUES ('$description','$amount','$num')";
 
         $result = mysqli_query($db,$sql);
         if($result){
-            header("location: revenue.php");
+            header("location: dashboard.php");
         }
         else{
         //     echo 

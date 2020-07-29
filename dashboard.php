@@ -72,7 +72,22 @@
         <div class="row justify-content-md-center">
             <div class="mbr-white col-md-10">
                 <h1 class="mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style display-1">
-                    BALANCE: TSH. 1,878,000</h1>
+                    BALANCE:             <?php
+            $num = $_SESSION['login_id'];
+           $sql_exp="SELECT SUM(expenses_amount) as rev_total FROM expenses where users_id=$num";
+           $sql_rev="SELECT SUM(revenue_amount) as exp_total FROM revenue where users_id=$num";
+           
+           $res_Rev =mysqli_query($db,$sql_rev);
+           $res_Exp =mysqli_query($db,$sql_exp);
+           
+           $exp = mysqli_fetch_array($res_Exp);
+           $rev = mysqli_fetch_array($res_Rev);
+           
+           $bal = $rev[0] - $exp[0];
+
+           echo $bal;
+
+            ?></h1>
                 <p class="mbr-text align-center pb-3 mbr-fonts-style display-5">MONEY MANAGEMENT REQUIRES COMMITMENT AND SACRIFICE</p>
                 <div class="mbr-section-btn align-center"><a class="btn btn-md btn-secondary display-4" href="expenses.php">EXPENSES</a>
                         <a class="btn btn-md btn-warning display-4" href="revenue.php">REVENUE</a></div>

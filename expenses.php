@@ -100,11 +100,11 @@
       <div class="modal-body">
         <div class="form-group">
           <label class="form-control-label mbr-fonts-style display-7">Description</label>
-          <input type="text" class="form-control" name="neno"  required="">
+          <input type="text" class="form-control" name="exp_neno"  required="">
         </div>
         <div class="form-group">
           <label class="form-control-label mbr-fonts-style display-7">Amount</label><br>
-          <span>Tsh. </span><input type="number" class="form-control" name="kiasi"  required="">
+          <span>Tsh. </span><input type="number" class="form-control" name="exp_kiasi"  required="">
         </div>
       </div>
 
