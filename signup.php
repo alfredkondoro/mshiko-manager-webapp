@@ -120,7 +120,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="col-md-4 multi-horizontal">
                                 <div class="form-group">
                                     <label class="form-control-label mbr-fonts-style display-7" >Username</label>
-                                    <input type="text" class="form-control" name="jina" required="">
+                                    <input type="text" class="form-control" name="jina" required  oninvalid="this.setCustomValidity('Kindly enter your username')"oninput="this.setCustomValidity('')">
                                 </div>
                             </div>
                         </div>
@@ -128,7 +128,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="col-md-4 multi-horizontal">
                                 <div class="form-group">
                                     <label class="form-control-label mbr-fonts-style display-7" >Email</label>
-                                    <input type="text" class="form-control" name="baruapepe" required="">
+                                    <input id="suemail" type="email" class="form-control" name="baruapepe" required oninvalid="this.setCustomValidity('Kindly enter your email')"oninput="this.setCustomValidity('')">                        
                                 </div>
                             </div>
                         </div>
@@ -136,7 +136,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="col-md-4 multi-horizontal">
                                 <div class="form-group">
                                     <label class="form-control-label mbr-fonts-style display-7" >Description</label>
-                                    <input type="text" class="form-control" name="maelezo" required="">
+                                    <input type="text" class="form-control" name="maelezo" required oninvalid="this.setCustomValidity('Kindly enter your description')"oninput="this.setCustomValidity('')">
                                 </div>
                             </div>
                         </div>
@@ -144,11 +144,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="col-md-4 multi-horizontal">
                                 <div class="form-group">
                                     <label class="form-control-label mbr-fonts-style display-7">Password</label>
-                                    <input type="password" class="form-control" name="pwd"  required="">
+                                    <input type="password" class="form-control" name="pwd"  required oninvalid="this.setCustomValidity('Kindly enter your password')"oninput="this.setCustomValidity('')">
                                 </div>
                             </div>
                             </div>
-                        <span class="input-group-btn"><button type="submit" class="btn btn-form btn-secondary display-4">Sign Up</button></span>
+                        <span class="input-group-btn"><button type="submit"  class="btn btn-form btn-secondary display-4">Sign Up</button></span>
                     </form>
             </div>
         </div>
