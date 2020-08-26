@@ -17,17 +17,19 @@
 
     // Then we will asign variables with the inputs that the user has entered
         $exp_description = $_POST['exp_neno'];
-        $exp_amount = $_POST['exp_kiasi']; 
+        $exp_amount = $_POST['exp_kiasi'];
+    //This input is entered automatically by the system
+        $date = $_POST['exp_tarehe']; 
 
     // Using SQL we will create a query statement for the inputs to send them to the database
-        $sql = "INSERT INTO `expenses`( `expenses_description`, `expenses_amount`, `users_id`) VALUES ('$exp_description','$exp_amount','$num')";
+        $sql = "INSERT INTO `expenses`( `expenses_description`, `expenses_date`, `expenses_amount`, `users_id`) VALUES ('$exp_description', '$date','$exp_amount','$num')";
 
     // Using the connection variable, we will then query the data into the database
         $result = mysqli_query($db,$sql);
         if($result){
     
     // If the query is successful that is the data is entered successfully then user will be sent to the dashboard page
-            header("location: dashboard.php");
+            header("location: expenses.php");
         }
         else{
     // If not successful an error will be outputed to the user

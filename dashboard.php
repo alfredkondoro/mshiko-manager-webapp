@@ -130,6 +130,7 @@
 </section>
 
 <!-- JS files of the system -->
+  <script src="assets/custom/browserclose.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/tether/tether.min.js"></script>
   <script src="assets/popper/popper.min.js"></script>

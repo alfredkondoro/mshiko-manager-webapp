@@ -120,6 +120,7 @@
         <div class="form-group">
           <label class="form-control-label mbr-fonts-style display-7">Amount</label><br>
           <span>Tsh. </span><input type="number" class="form-control" name="rev_kiasi"  required="">
+          <input type="hidden" name="rev_tarehe" class="form-control" value ="<?php echo date("D, d-m-Y") ?>">
         </div>
       </div>
 
@@ -189,9 +190,12 @@
               <tr>
                   <td><?=$n++?></td>
                   <td><?php echo $row["revenue_description"]; ?></td>
-                  <td><?php echo $row["revenue_amount"]; ?></td>
-                  <td></td>
-                  <td> <span class="text-secondary">Delete</span> | <span class="text-warning">Edit</span></td>
+                  <td>Tsh. <?php echo $row["revenue_amount"]; ?></td>
+                  <td><?php echo $row["revenue_date"]; ?></td>
+                  <td><form action="deleterevenue.php">
+                                                <input type="hidden" name="revenue_id" class="form-control" value ="<?php echo $row["revenue_id"]; ?>">
+                                                <button type="submit" class="btn btn-sm btn-secondary display-4" >Delete</button></td>
+                                                </form>
               </tr>
               <?php
                                         }
