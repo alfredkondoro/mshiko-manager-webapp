@@ -92,11 +92,11 @@
         <div class="media-container-row">
             <div class="title col-12 col-md-8">
                 <h2 class="align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-1">
-                EXPENSES </h2>
+                Expenses </h2>
                 <h3 class="mbr-section-subtitle align-center mbr-light mbr-white pb-3 mbr-fonts-style display-5">
-                    COST INCURRED IN OR REQUIRED FOR SOMETHING</h3>
+                    Cost incurred in or required for something</h3>
                 
-                <div class="mbr-section-btn align-center"><a class="btn btn-secondary display-4" data-toggle="modal" data-target="#myModal"><span class="mobi-mbri mobi-mbri-plus mbr-iconfont mbr-iconfont-btn"></span>ADD MORE EXPENSES</a></div>
+                <div class="mbr-section-btn align-center"><a class="btn btn-secondary display-4" data-toggle="modal" data-target="#myModal"><span class="mobi-mbri mobi-mbri-plus mbr-iconfont mbr-iconfont-btn"></span>Add more expenses</a></div>
             </div>
         </div>
     </div>
@@ -108,7 +108,7 @@
 
       <!-- Modal Header -->
       <div class="modal-header">
-        <h4 class="modal-title">ADD MORE EXPENSES</h4>
+        <h4 class="modal-title text-secondary">Add more expenses</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <form action="create-expenses.php" method="post">
@@ -164,6 +164,12 @@
               <th class="head-item mbr-fonts-style display-7">
                   Amount
               </th>
+              <th class="head-item mbr-fonts-style display-7">
+                  Date Registered
+              </th>
+              <th class="head-item mbr-fonts-style display-7">
+                  Action
+              </th>
               </tr>
             </thead>
             <tbody>
@@ -180,7 +186,9 @@
               <tr>
                   <td><?=$n++?></td>
                   <td><?php echo $row["expenses_description"]; ?></td>
-                  <td><?php echo $row["expenses_amount"]; ?></td>
+                  <td>Tsh. <?php echo $row["expenses_amount"]; ?></td>
+                  <td></td>
+                  <td> <span class="text-secondary">Delete</span> | <span class="text-warning">Edit</span></td>
               </tr>
               <?php
                                         }

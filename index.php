@@ -54,16 +54,16 @@
 <!-- Content section of the index page -->
 <!-- Setting of the background image for UI of the index page -->
 <section class="cid-s5T3BIfHTa mbr-fullscreen mbr-parallax-background" id="header2-2">
-    <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(35, 35, 35);"></div>
+    <div class="mbr-overlay" style="opacity: 0.8; background-color: rgb(35, 35, 35);"></div>
     <div class="container align-center">
         <div class="row justify-content-md-center">
             <div class="mbr-white col-md-10">
                 <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-1">
-                    WELCOME TO <br>MSHIKO MANAGER</h1>
+                    Welcome to</h1> <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style text-secondary display-1">Mshiko Manager</h1>
                 
                 <p class="mbr-text pb-3 mbr-fonts-style display-5">Welcome to the simplest money management platform.<br>Easy to use and very efficient.<br>All your transactions under one roof.</p>
-                <div class="mbr-section-btn"><a class="btn btn-md btn-secondary display-4" href="signup.php">SIGNUP</a>
-                    <a class="btn btn-md btn-white-outline display-4" href="login.php">LOGIN</a></div>
+                <div class="mbr-section-btn"><a class="btn btn-md btn-secondary display-4" href="signup.php">Sign Up</a>
+                    <a class="btn btn-md btn-white-outline display-4" href="login.php">Login</a></div>
             </div>
         </div>
     </div>

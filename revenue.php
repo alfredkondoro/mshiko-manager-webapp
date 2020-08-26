@@ -91,11 +91,11 @@
         <div class="media-container-row">
             <div class="title col-12 col-md-8">
                 <h2 class="align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-1">
-                    REVENUE</h2>
+                    Revenue</h2>
                 <h3 class="mbr-section-subtitle align-center mbr-light mbr-white pb-3 mbr-fonts-style display-5">
-                    COST INCURRED IN OR REQUIRED FOR SOMETHING</h3>
+                Income generated or received for a certain cause</h3>
                 
-                    <div class="mbr-section-btn align-center"><a class="btn btn-secondary display-4" data-toggle="modal" data-target="#myModal"><span class="mobi-mbri mobi-mbri-plus mbr-iconfont mbr-iconfont-btn"></span>ADD MORE REVENUE</a></div>>
+                    <div class="mbr-section-btn align-center"><a class="btn btn-secondary display-4" data-toggle="modal" data-target="#myModal"><span class="mobi-mbri mobi-mbri-plus mbr-iconfont mbr-iconfont-btn"></span>Add more revenue</a></div>>
             </div>
         </div>
     </div>
@@ -107,7 +107,7 @@
 
       <!-- Modal Header -->
       <div class="modal-header">
-        <h4 class="modal-title">ADD MORE REVENUE</h4>
+        <h4 class="modal-title text-secondary">Add more revenue</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <form action="create-revenue.php" method="post">
@@ -166,6 +166,12 @@
               <th class="head-item mbr-fonts-style display-7">
                   Amount
               </th>
+              <th class="head-item mbr-fonts-style display-7">
+                  Date Registered
+              </th>
+              <th class="head-item mbr-fonts-style display-7">
+                  Action
+              </th>
               </tr>
             </thead>
             <tbody>            
@@ -184,6 +190,8 @@
                   <td><?=$n++?></td>
                   <td><?php echo $row["revenue_description"]; ?></td>
                   <td><?php echo $row["revenue_amount"]; ?></td>
+                  <td></td>
+                  <td> <span class="text-secondary">Delete</span> | <span class="text-warning">Edit</span></td>
               </tr>
               <?php
                                         }

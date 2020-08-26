@@ -84,7 +84,7 @@
 
             <!-- Balance of the user is computed from the total expenses and revenue inputed by the user -->
                 <h1 class="mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style display-1">
-                    BALANCE:             <?php
+                <span class="text-warning">Balance:</span> Tsh.<?php
             $num = $_SESSION['login_id'];
 
             // SQL Statement to add all amounts entered by the user
@@ -104,11 +104,11 @@
            echo $bal;
 
             ?></h1>
-                <p class="mbr-text align-center pb-3 mbr-fonts-style display-5">MONEY MANAGEMENT REQUIRES COMMITMENT AND SACRIFICE</p>
+                <p class="mbr-text align-center pb-3 mbr-fonts-style display-5">Money management requires commitment and sacrifice</p>
                 
                 <!-- Navigation buttons to expenses and revenue pages -->
-                <div class="mbr-section-btn align-center"><a class="btn btn-md btn-secondary display-4" href="expenses.php">EXPENSES</a>
-                        <a class="btn btn-md btn-warning display-4" href="revenue.php">REVENUE</a></div>
+                <div class="mbr-section-btn align-center"><a class="btn btn-md btn-secondary display-4" href="expenses.php">Expenses</a>
+                        <a class="btn btn-md btn-warning display-4" href="revenue.php">Revenue</a></div>
             </div>
         </div>
     </div>

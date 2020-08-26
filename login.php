@@ -112,8 +112,8 @@
     <div class="container">
         <div class="media-container-row">
             <div class="title col-12 col-md-8">
-                <h2 class="align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-1">LOGIN</h2>
-                <h3 class="mbr-section-subtitle align-center mbr-light mbr-white pb-3 mbr-fonts-style display-5"><strong>A SINGLE USERNAME AND PASSWORD GETS YOU IN!</strong><br><strong>SIGNED IN ALREADY?</strong><br><strong><a href="signup.php">SIGN UP HERE</a></strong></h3>
+                <h2 class="align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-1">Login</h2>
+                <h3 class="mbr-section-subtitle align-center mbr-light mbr-white pb-3 mbr-fonts-style display-5"><strong>A single username and password gets you in!</strong><br><strong>Signed up already?</strong><br><strong><a href="signup.php">Sign up here</a></strong></h3>
                 
                 
             </div>
@@ -149,7 +149,7 @@
                                 </div>
                             </div>
                             </div>
-                        <span class="input-group-btn"><button type="submit" class="btn btn-form btn-secondary display-4">LOGIN</button></span>
+                        <span class="input-group-btn"><button type="submit" class="btn btn-form btn-secondary display-4">Login</button></span>
                     </form>
             </div>
         </div>

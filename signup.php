@@ -93,8 +93,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="container">
         <div class="media-container-row">
             <div class="title col-12 col-md-8">
-                <h2 class="align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-1">SIGN UP</h2>
-                <h3 class="mbr-section-subtitle align-center mbr-light mbr-white pb-3 mbr-fonts-style display-5"><strong>COME JOIN OUR COMMUNITY!</strong><br><strong>LET'S SETUP YOUR ACCOUNT, ALREADY HAVE ONE?</strong><br><a href="login.php" class="text-primary">SIGN IN HERE</a></h3>
+                <h2 class="align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-1">Sign Up</h2>
+                <h3 class="mbr-section-subtitle align-center mbr-light mbr-white pb-3 mbr-fonts-style display-5"><strong>Come join our community!</strong><br><strong>Let's setup your account, already have one?</strong><br><a href="login.php" class="text-primary">Sign in here!</a></h3>
                 
                 
             </div>
@@ -148,7 +148,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                                 </div>
                             </div>
                             </div>
-                        <span class="input-group-btn"><button type="submit" class="btn btn-form btn-secondary display-4">SIGN UP</button></span>
+                        <span class="input-group-btn"><button type="submit" class="btn btn-form btn-secondary display-4">Sign Up</button></span>
                     </form>
             </div>
         </div>
