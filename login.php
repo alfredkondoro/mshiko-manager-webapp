@@ -7,6 +7,7 @@
    
       $myusername = $_POST['jina'];
       $mypassword = $_POST['pwd'];
+    //   $hashPassword = sha1($mypassword);
 
       if(empty(trim($_POST["jina"]))){
         $username_err = "Please enter username";
@@ -23,24 +24,30 @@
       // Prepare a select statement
       $sql = "SELECT users_id FROM users WHERE users_name = '$myusername' and users_password = '$mypassword'";
 
+      // Using the connection variable, we will then query the data into the database
       $result = mysqli_query($db,$sql)or die(mysqli_error($db));
+
+    //   Comparison of inputs to the data in the database
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
       $active = $row['active'];
       
       $count = mysqli_num_rows($result);
       
-      // If result matched $myusername and $mypassword, table row must be 1 row
-		
+      // If result matched $myusername and $mypassword, table row must be 1 row		
       if($count == 1) {
          $_SESSION['login_user'] = $myusername;
          $_SESSION['login_id'] = $row['users_id'];
          
+         // If the query is successful that is the data is entered successfully then user will be sent to the dashboard page
          header("location: dashboard.php");
       }else {
+          // If the code will not run then the user will be prompted an error 
          $error = "Your Login Name or Password is invalid";
       }
    }
 ?>
+
+<!-- Beginning of the front end part of system -->
 <!DOCTYPE html>
 <html >
 <head>
@@ -51,7 +58,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="assets/images/logo-128x128-1.png" type="image/x-icon">
   <meta name="description" content="Web Page Builder Description">
+
+  <!-- Title of the page -->
   <title>Login | Mshiko Manager</title>
+
+  <!-- CSS files of the system -->
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="stylesheet" href="assets/tether/tether.min.css">
@@ -61,15 +72,14 @@
   <link rel="stylesheet" href="assets/dropdown/css/style.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  
-  
-  
+
 </head>
+
+<!-- Beginning of the body section -->
 <body>
   <section class="menu cid-s5SRSarPQi" once="menu" id="menu1-4">
 
-    
-
+<!-- Navigation section of the system -->
     <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
         <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <div class="hamburger">
@@ -92,9 +102,9 @@
     </nav>
 </section>
 
+<!-- Content section of the login page -->
+<!-- Setting of the background video for UI of the login page -->
 <section class="mbr-section content5 cid-s5VRgyCWkH mbr-parallax-background" id="content5-q">
-
-    
 
     <div class="mbr-overlay" style="opacity: 0.7; background-color: rgb(35, 35, 35);">
     </div>
@@ -111,16 +121,11 @@
     </div>
 </section>
 
+<!-- Form for login -->
 <section class="mbr-section form1 cid-s5T49cDFOb" id="form1-6">
-
-    
-
-    
     <div class="container">
         <div class="row justify-content-center">
-            <div class="title col-12 col-lg-8">
-                
-                
+            <div class="title col-12 col-lg-8"> 
             </div>
         </div>
     </div>
@@ -151,12 +156,8 @@
     </div>
 </section>
 
+<!-- Footer section of the login page -->
 <section once="" class="cid-s5T3FyOMpk" id="footer6-5">
-
-    
-
-    
-
     <div class="container">
         <div class="media-container-row align-center mbr-white">
             <div class="col-12">
@@ -168,7 +169,7 @@
     </div>
 </section>
 
-
+<!-- JS files of the system -->
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/popper/popper.min.js"></script>
   <script src="assets/tether/tether.min.js"></script>

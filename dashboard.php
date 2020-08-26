@@ -1,12 +1,20 @@
 <?php
+
+// Beginning of a session
    session_start();
+
+// Requesting the connection by including the connection file
    require_once'connect.php';
+
+// If the user has not logged in then he/she would be sent to the login page
    if(!isset($_SESSION['login_user'])){
     header("location: index.php");
    }
    else{
 
 ?>
+
+<!-- Beginning of the front end part of system -->
 <!DOCTYPE html>
 <html >
 <head>
@@ -16,7 +24,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="assets/images/logo-128x128-1.png" type="image/x-icon">
   <meta name="description" content="Website Builder Description">
+
+<!-- Title of the page -->
   <title>Dashboard | Mshiko Manager</title>
+
+<!-- CSS files of the system -->
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="stylesheet" href="assets/tether/tether.min.css">
@@ -26,15 +38,13 @@
   <link rel="stylesheet" href="assets/dropdown/css/style.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  
-  
-  
 </head>
+
+<!-- Beginning of the body section -->
 <body>
   <section class="menu cid-s5SRSarPQi" once="menu" id="menu1-d">
 
-    
-
+<!-- Navigation section of the system -->
     <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <div class="hamburger">
@@ -55,40 +65,48 @@
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             
+             <!-- Button to signout -->
             <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-secondary display-4" href="logout.php"><span class="mobi-mbri mobi-mbri-error mbr-iconfont mbr-iconfont-btn"></span>
                     SignOut</a></div>
         </div>
     </nav>
 </section>
 
+<!-- Content section of the dashboard page -->
+<!-- Setting of the background video for UI of the dashboard page -->
 <section class="header6 cid-s5VIJsycr6 mbr-fullscreen" data-bg-video="https://www.youtube.com/watch?v=AK1o9rZHABg" id="header6-j">
-
-    
-
     <div class="mbr-overlay" style="opacity: 0.8; background-color: rgb(35, 35, 35);">
     </div>
 
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="mbr-white col-md-10">
+
+            <!-- Balance of the user is computed from the total expenses and revenue inputed by the user -->
                 <h1 class="mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style display-1">
                     BALANCE:             <?php
             $num = $_SESSION['login_id'];
+
+            // SQL Statement to add all amounts entered by the user
            $sql_exp="SELECT SUM(expenses_amount) as rev_total FROM expenses where users_id=$num";
            $sql_rev="SELECT SUM(revenue_amount) as exp_total FROM revenue where users_id=$num";
            
+            // Querying the SQL statements with database using the connection variable
            $res_Rev =mysqli_query($db,$sql_rev);
            $res_Exp =mysqli_query($db,$sql_exp);
            
            $exp = mysqli_fetch_array($res_Exp);
            $rev = mysqli_fetch_array($res_Rev);
            
+           //Computation of the balance
            $bal = $rev[0] - $exp[0];
 
            echo $bal;
 
             ?></h1>
                 <p class="mbr-text align-center pb-3 mbr-fonts-style display-5">MONEY MANAGEMENT REQUIRES COMMITMENT AND SACRIFICE</p>
+                
+                <!-- Navigation buttons to expenses and revenue pages -->
                 <div class="mbr-section-btn align-center"><a class="btn btn-md btn-secondary display-4" href="expenses.php">EXPENSES</a>
                         <a class="btn btn-md btn-warning display-4" href="revenue.php">REVENUE</a></div>
             </div>
@@ -98,12 +116,8 @@
     
 </section>
 
+<!-- Footer section of the dashboard page -->
 <section once="" class="cid-s5T3FyOMpk" id="footer6-e">
-
-    
-
-    
-
     <div class="container">
         <div class="media-container-row align-center mbr-white">
             <div class="col-12">
@@ -115,7 +129,7 @@
     </div>
 </section>
 
-
+<!-- JS files of the system -->
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/tether/tether.min.js"></script>
   <script src="assets/popper/popper.min.js"></script>
@@ -126,8 +140,6 @@
   <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
   <script src="assets/ytplayer/jquery.mb.ytplayer.min.js"></script>
   <script src="assets/theme/js/script.js"></script>
-  
-  
 </body>
 </html>
 <?php

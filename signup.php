@@ -1,25 +1,35 @@
 <?php
 
+// Requesting the connection by including the connection file
 require_once 'connect.php';
+
 if($_SERVER["REQUEST_METHOD"] == "POST") {
 
+    // inputs enterded by the user are assigned in the variable
     $jina = $_POST['jina'];
     $baruapepe = $_POST['baruapepe'];
     $maelezo = $_POST['maelezo'];
     $pwd = $_POST['pwd'];
-    
+    // $hashPassword = md5($pwd);
+
+    // Using SQL we will create a query statement for the inputs to send them to the database
     $sql = "INSERT INTO users(users_name,users_email,users_description, users_password) VALUES('$jina', '$baruapepe', '$maelezo', '$pwd')";
-       
+    
+    // Using the connection variable, we will then query the data into the database
     $retval = mysqli_query($db, $sql);
     
     if(!$retval ) {
+        // If the code will not run then the user will be prompted an error 
        die('Could not enter data: ' . mysqli_error());
     }
      else {
+         // If the query is successful that is the data is entered successfully then user will be sent to the login page
     header("location: login.php");
     }}
  else{
 ?>
+
+<!-- Beginning of the front end part of system -->
 <!DOCTYPE html>
 <html >
 <head>
@@ -30,7 +40,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="assets/images/logo-128x128-1.png" type="image/x-icon">
   <meta name="description" content="Web Page Builder Description">
+
+<!-- Title of the page -->
   <title>SignUp | Mshiko Manager</title>
+
+<!-- CSS files of the system -->
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="stylesheet" href="assets/tether/tether.min.css">
@@ -40,15 +54,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   <link rel="stylesheet" href="assets/dropdown/css/style.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  
-  
-  
+
 </head>
+
+<!-- Beginning of the body section -->
 <body>
   <section class="menu cid-s5SRSarPQi" once="menu" id="menu1-4">
 
-    
-
+<!-- Navigation section of the system -->
     <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <div class="hamburger">
@@ -71,10 +84,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     </nav>
 </section>
 
+<!-- Content section of the signup page -->
+<!-- Setting of the background video for UI of the signup page -->
 <section class="mbr-section content5 cid-s5VzKzhomn mbr-parallax-background" id="content5-f">
-
-    
-
     <div class="mbr-overlay" style="opacity: 0.7; background-color: rgb(35, 35, 35);">
     </div>
 
@@ -82,7 +94,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="media-container-row">
             <div class="title col-12 col-md-8">
                 <h2 class="align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-1">SIGN UP</h2>
-                <h3 class="mbr-section-subtitle align-center mbr-light mbr-white pb-3 mbr-fonts-style display-5"><strong>COME JOIN OUR COMMUNITY!</strong><br><strong>LET'S SETUP YOUR ACCOUNT, ALREADY HAVE ONE?</strong><br><a href="login.html" class="text-primary">SIGN IN HERE</a></h3>
+                <h3 class="mbr-section-subtitle align-center mbr-light mbr-white pb-3 mbr-fonts-style display-5"><strong>COME JOIN OUR COMMUNITY!</strong><br><strong>LET'S SETUP YOUR ACCOUNT, ALREADY HAVE ONE?</strong><br><a href="login.php" class="text-primary">SIGN IN HERE</a></h3>
                 
                 
             </div>
@@ -90,16 +102,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 </section>
 
+<!-- Form for signing up -->
 <section class="mbr-section form1 cid-s5T49cDFOb" id="form1-6">
-
-    
-
-    
+ 
     <div class="container">
         <div class="row justify-content-center">
             <div class="title col-12 col-lg-8">
-                
-                
+               
             </div>
         </div>
     </div>
@@ -146,12 +155,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 </section>
 
+<!-- Footer section of the signup page -->
 <section once="" class="cid-s5T3FyOMpk" id="footer6-5">
-
-    
-
-    
-
     <div class="container">
         <div class="media-container-row align-center mbr-white">
             <div class="col-12">
@@ -163,7 +168,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 </section>
 
-
+<!-- JS files of the system -->
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/popper/popper.min.js"></script>
   <script src="assets/tether/tether.min.js"></script>

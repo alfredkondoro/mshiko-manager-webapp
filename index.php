@@ -1,3 +1,4 @@
+<!-- Beginning of the front end part of system -->
 <!DOCTYPE html>
 <html >
 <head>
@@ -7,7 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="assets/images/logo-128x128-1.png" type="image/x-icon">
   <meta name="description" content="">
+
+<!-- Title of the page --> 
   <title>Home | Mshiko Manager</title>
+
+<!-- CSS files of the system -->
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="stylesheet" href="assets/tether/tether.min.css">
@@ -17,15 +22,13 @@
   <link rel="stylesheet" href="assets/dropdown/css/style.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  
-  
-  
 </head>
+
+<!-- Beginning of the body section -->
 <body>
   <section class="menu cid-s5SRSarPQi" once="menu" id="menu1-0">
 
-    
-
+<!-- Navigation section of the system -->
     <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
         <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <div class="hamburger">
@@ -48,12 +51,10 @@
     </nav>
 </section>
 
+<!-- Content section of the index page -->
+<!-- Setting of the background image for UI of the index page -->
 <section class="cid-s5T3BIfHTa mbr-fullscreen mbr-parallax-background" id="header2-2">
-
-    
-
     <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(35, 35, 35);"></div>
-
     <div class="container align-center">
         <div class="row justify-content-md-center">
             <div class="mbr-white col-md-10">
@@ -69,12 +70,8 @@
     
 </section>
 
+<!-- Footer section of the index page -->
 <section once="" class="cid-s5T3FyOMpk" id="footer6-3">
-
-    
-
-    
-
     <div class="container">
         <div class="media-container-row align-center mbr-white">
             <div class="col-12">
@@ -86,7 +83,7 @@
     </div>
 </section>
 
-
+<!-- JS files of the system -->
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/tether/tether.min.js"></script>
   <script src="assets/popper/popper.min.js"></script>

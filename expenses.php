@@ -1,10 +1,17 @@
 <?php
+
+// Beginning of a session
    session_start();
+
+// Requesting the connection by including the connection file
    require_once'connect.php';
+
+// If the user has not logged in then he/she would be sent to the login page
    if(!isset($_SESSION['login_user'])){
     header("location: index.php");
    }
    else{
+    //  If the user has a session variable, it will be saved as a variable
     $num = $_SESSION['login_id'];
 
 ?>
@@ -18,7 +25,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="assets/images/logo-128x128-1.png" type="image/x-icon">
   <meta name="description" content="Web Site Maker Description">
+
+<!-- Title of the page -->
   <title>Expenses | Mshiko Manager</title>
+
+<!-- CSS files of the system -->
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="stylesheet" href="assets/tether/tether.min.css">
@@ -33,11 +44,12 @@
   
   
 </head>
+
+<!-- Beginning of the body section -->
 <body>
   <section class="menu cid-s5SRSarPQi" once="menu" id="menu1-h">
 
-    
-
+<!-- Navigation section of the system -->
     <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
         <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <div class="hamburger">
@@ -59,12 +71,15 @@
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             
+            <!-- Button to signout -->
             <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-secondary display-4" href="logout.php"><span class="mobi-mbri mobi-mbri-error mbr-iconfont mbr-iconfont-btn"></span>
                     SignOut</a></div>
         </div>
     </nav>
 </section>
 
+<!-- Content section of the expenses page -->
+<!-- Setting of the background video for UI of the expenses page -->
 <section class="mbr-section content5 cid-s5VJooyPu3" data-bg-video="https://www.youtube.com/watch?v=NqDv1Vb_rwM" id="content5-l">
 
     
@@ -72,6 +87,7 @@
     <div class="mbr-overlay" style="opacity: 0.9; background-color: rgb(35, 35, 35);">
     </div>
 
+<!-- Upper section of the content section -->
     <div class="container">
         <div class="media-container-row">
             <div class="title col-12 col-md-8">
@@ -116,13 +132,12 @@
     </div>
   </div>
 </div>
+
+<!-- Table section to display the expenses -->
 <section class="section-table cid-s5VJhTwGmx" id="table1-k">
 
-  
-  
   <div class="container container-table">
-      
-      
+            
       <div class="table-wrapper">
         <div class="container">
           <div class="row search">
@@ -151,8 +166,9 @@
               </th>
               </tr>
             </thead>
-            <tbody>            
-  
+            <tbody>
+            <!-- Display of expenses for that specific user  -->
+            <!-- We use the session id which is also the user id to differentiate each user -->
               <?php
               $matumizi = "SELECT * FROM expenses where users_id= '$num'";
               $tokeo = mysqli_query($db, $matumizi);
@@ -192,12 +208,8 @@
     </div>
 </section>
 
+<!-- Footer section of the expenses page -->
 <section once="" class="cid-s5T3FyOMpk" id="footer6-i">
-
-    
-
-    
-
     <div class="container">
         <div class="media-container-row align-center mbr-white">
             <div class="col-12">
@@ -209,7 +221,7 @@
     </div>
 </section>
 
-
+<!-- JS files of the system -->
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/tether/tether.min.js"></script>
   <script src="assets/popper/popper.min.js"></script>
