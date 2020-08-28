@@ -7,7 +7,7 @@
    
       $myusername = $_POST['jina'];
       $mypassword = $_POST['pwd'];
-    //   $hashPassword = sha1($mypassword);
+      $hashPassword = sha1($mypassword);
 
       if(empty(trim($_POST["jina"]))){
         $username_err = "Please enter username";
@@ -22,7 +22,7 @@
         $password = trim($_POST["pwd"]);
     }
       // Prepare a select statement
-      $sql = "SELECT users_id FROM users WHERE users_name = '$myusername' and users_password = '$mypassword'";
+      $sql = "SELECT users_id FROM users WHERE users_name = '$myusername' and users_password = '$hashPassword'";
 
       // Using the connection variable, we will then query the data into the database
       $result = mysqli_query($db,$sql)or die(mysqli_error($db));

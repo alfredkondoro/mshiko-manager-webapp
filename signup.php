@@ -10,10 +10,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $baruapepe = $_POST['baruapepe'];
     $maelezo = $_POST['maelezo'];
     $pwd = $_POST['pwd'];
-    // $hashPassword = md5($pwd);
+    $hashPassword = sha1($pwd);
 
     // Using SQL we will create a query statement for the inputs to send them to the database
-    $sql = "INSERT INTO users(users_name,users_email,users_description, users_password) VALUES('$jina', '$baruapepe', '$maelezo', '$pwd')";
+    $sql = "INSERT INTO users(users_name,users_email,users_description, users_password) VALUES('$jina', '$baruapepe', '$maelezo', '$hashPassword')";
     
     // Using the connection variable, we will then query the data into the database
     $retval = mysqli_query($db, $sql);
